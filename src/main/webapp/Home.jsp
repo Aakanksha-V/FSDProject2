@@ -13,6 +13,6 @@
 	<a href="AddClass.jsp">Set up a master list of all the classes</a><br>
 	<a href="">Assign classes for subjects from the master list</a><br>
 	<a href="AssignTtoCforS.jsp">Assign teachers to a class for a subject</a><br>
-	<a href="DisplayStudent.jsp">Get a master list of students</a><br>
+	<a href="StudentController">Get a master list of students</a><br>
 </body>
 </html>

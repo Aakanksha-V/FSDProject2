@@ -17,6 +17,7 @@ public class StudentService {
 	}
 	
 	public List<Student> getAllRecord() {
+		System.out.print("Inside student service");
 		return studentDao.getAllRecord();
 	}
 
