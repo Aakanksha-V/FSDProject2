@@ -7,19 +7,28 @@ import javax.persistence.Id;
 public class Classes {
 	
 	@Id
-	private int classId;
-	private String className;
+	private int classesId;
+	private String classesName;
+	
+	public Classes() {
+		super();
+	}
+	public Classes(int classId, String className) {
+		super();
+		this.classesId = classId;
+		this.classesName = className;
+	}
 	public int getClassId() {
-		return classId;
+		return classesId;
 	}
 	public void setClassId(int classId) {
-		this.classId = classId;
+		this.classesId = classId;
 	}
 	public String getClassName() {
-		return className;
+		return classesName;
 	}
 	public void setClassName(String className) {
-		this.className = className;
+		this.classesName = className;
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.service;
 
+import java.util.List;
+
 import com.dao.StudentDao;
 import com.entity.Student;
 
@@ -12,6 +14,10 @@ public class StudentService {
 			return "New Student added";
 		else
 			return "Student didn't added!!!";
+	}
+	
+	public List<Student> getAllRecord() {
+		return studentDao.getAllRecord();
 	}
 
 }

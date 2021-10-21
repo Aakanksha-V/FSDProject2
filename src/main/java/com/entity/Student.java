@@ -5,11 +5,16 @@ import javax.persistence.Id;
 
 @Entity
 public class Student {
+	
 	@Id
 	private int studentId;
 	private String studentName;
 	private int class_id;
 	
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public Student(int studentId, String studentName, int class_id) {
 		super();
 		this.studentId = studentId;

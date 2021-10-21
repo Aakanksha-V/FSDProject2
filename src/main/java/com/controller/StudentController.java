@@ -2,7 +2,10 @@ package com.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,9 +33,20 @@ public class StudentController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter printWriter = response.getWriter();
 		printWriter.println("Welcome");
+		StudentService ser = new StudentService();
+		List<Student> listOfStud = ser.getAllRecord();
+		Iterator<Student> iterator = listOfStud.iterator();
+		while (iterator.hasNext()) {
+			Student s = (Student) iterator.next();
+			System.out.println(s.getStudentId()+" "+s.getStudentName());
+			
+		}
+		request.setAttribute("obj", listOfStud);
+		RequestDispatcher rd = request.getRequestDispatcher("DisplayStudent.jsp");
+		rd.include(request, response);
 	}
 
 	/**

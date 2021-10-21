@@ -1,5 +1,8 @@
 package com.dao;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -29,5 +32,12 @@ public class StudentDao {
 			System.out.println(e);
 			return false;
 		}
+	}
+	
+	public List<Student> getAllRecord(){
+		Session session  = sFactory.openSession();
+		Query<Student> qry = session.createQuery("select s from Student s");
+		List<Student> listOfStudent = qry.list();
+		return listOfStudent;
 	}
 }
