@@ -63,6 +63,7 @@ public class Class_SubjectController extends HttpServlet {
 		Class_Subject a = new Class_Subject();
 		a.setClass_id(class_id);
 		a.setSubject_id(subject_id);
+		a.setTeacher_id(0);
 		boolean result = class_SubjectService.addSubjectToCLass(a);
 		RequestDispatcher rd1 = request.getRequestDispatcher("AssignSubjectsToClass.jsp");
 		if(result)

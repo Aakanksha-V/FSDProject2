@@ -46,6 +46,12 @@
   	<description></description>
   	<servlet-class>com.controller.ClassSubTeachController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ShowSubClassController</servlet-name>
+  	<display-name>ShowSubClassController</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.ShowSubClassController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>AdminController</servlet-name>
   	<url-pattern>/AdminController</url-pattern>
@@ -69,5 +75,9 @@
   <servlet-mapping>
   	<servlet-name>ClassSubTeachController</servlet-name>
   	<url-pattern>/ClassSubTeachController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShowSubClassController</servlet-name>
+  	<url-pattern>/ShowSubClassController</url-pattern>
   </servlet-mapping>
 </web-app>

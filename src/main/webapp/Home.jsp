@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h2>Student Academy</h2>
-	<a href="">Set up a master list of all the subjects for all the classes</a><br>
+	<a href="ShowSubClassController">Set up a master list of all the subjects for all the classes</a><br>
 	<a href="AddTeacher.jsp">Set up a master list of all the teachers</a><br>
 	<a href="AddClass.jsp">Set up a master list of all the classes</a><br>
 	<a href="Class_SubjectController">Assign classes for subjects from the master list</a><br>

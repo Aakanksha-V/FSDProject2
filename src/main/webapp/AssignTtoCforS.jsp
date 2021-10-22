@@ -45,6 +45,8 @@
 		</select>
 		<br>
 		<input type="submit" value="SUBMIT">
+		<br>
+		<a href="Home.jsp">Back</a>
 	</form>
 </body>
 </html>
