@@ -36,18 +36,9 @@ public class StudentDao {
 	}
 	
 	public List<Student> getAllRecord(){
-		System.out.print("Inside Student Dao");
 		Session session  = sFactory.openSession();
-		System.out.print(sFactory);
-		Query qry = session.createQuery("select obj from student obj");
-//		qry.setParameter("a", 26420);
+		Query qry = session.createQuery("select obj from Student obj");
 		List<Student> listOfStudent = qry.list();
-		Iterator<Student> iterator = listOfStudent.iterator();
-		while (iterator.hasNext()) {
-			Student s = (Student) iterator.next();
-			System.out.println(s.getStudentId()+" "+s.getStudentName());
-			
-		}
 		return listOfStudent;
 	}
 }

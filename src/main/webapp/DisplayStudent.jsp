@@ -16,13 +16,21 @@
 			<th>Student Name</th>
 			<th>Class ID</th>
 		</tr>
-		<c:forEach items="${obj}" var="student">
+		<%
+		Object obj = request.getAttribute("obj");
+		List<Student> listOfStd = (List<Student>)obj;
+		Iterator<Student> li = listOfStd.iterator();
+		while(li.hasNext()){
+			Student ss = li.next();
+		%>
 			<tr>
-				<td>${student.getStudentId()}</td>
-				<td>${student.getStudentName()}</td>
-				<td>${student.getClass_id()}</td>
+				<td><%=ss.getStudentId() %></td>
+				<td><%=ss.getStudentName() %></td>
+				<td><%=ss.getClass_id() %></td>
 			</tr>
-		 </c:forEach>
+			<%
+		}
+		 %>
 	</table>
 	<a href="Home.jsp">Back</a>
 </body>
