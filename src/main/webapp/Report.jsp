@@ -6,33 +6,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
 <link rel="stylesheet" href="style.css">
-<style>
-table {
-	  width: 100%;
-	  border-collapse: collapse;
-	} 
-</style>
-<title>Insert title here</title>
+<meta charset="ISO-8859-1">
+<title>REPORT</title>
 </head>
 <body>
-	<table border="1">
+	<table border="1" >
 		<tr>
-			<th>Class </th>
-			<th>Subject List</th>
+			<th>Class Name</th>
+			<th>Teacher Name</th>
+			<th>Subject Name</th>
 		</tr>
 		<%
 		Object obj = request.getAttribute("obj");
 		List<Object[]> resList = (List<Object[]>)obj;
-		Iterator<Object[]> li = resList.iterator();
+		Object obj1 = request.getAttribute("obj1");
+		List<Object[]> stuList = (List<Object[]>)obj1;
 		for(Object[] o : resList){
 			String className = (String) o[0];
-			String subjectName = (String) o[1];
+			String teacherName = (String) o[1];
+			String subjectName = (String) o[2];
+			
 		%>
 			<tr>
 				<td><%=className %></td>
 				<td><%=subjectName %></td>
+				<td><ul>
+		<% for(Object[] j : stuList){
+			String cname = (String) j[1];
+			if(className.equals(cname)){
+				String stuName = (String) j[0];
+		%>
+			<li><%=stuName %></li>	
+		<%}
+		}
+		%>
+		</ul></td>
 			</tr>
 			<%
 		}

@@ -42,5 +42,13 @@ public class Class_SubjectService {
 	public List<Object[]> getSubForClass(){
 		return class_SubjectDao.getSubForClass();
 	}
+	
+	public List<Object[]> getReport(){
+		return class_SubjectDao.getReport();
+	}
+	
+	public List<Object[]> getReportStu(){
+		return class_SubjectDao.getReportStu();
+	}
 
 }

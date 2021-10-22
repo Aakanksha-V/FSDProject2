@@ -63,5 +63,17 @@ public class Class_SubjectDao {
 		return resList;
 		
 	}
+	
+	public List<Object[]> getReport(){
+		Session session = sessionFactory.openSession();
+		List<Object[]> result = session.createNativeQuery("select c.classesname, t.teachername, s.subjectname from classes as c, teacher as t, subject as s, class_subject as cs where c.classesid = cs.class_id and s.subjectid = cs.subject_id and t.teacherid = cs.teacher_id and t.teacherid != 0 order by cs.class_id").list();
+		return result;
+	}
+	
+	public List<Object[]> getReportStu(){
+		Session session = sessionFactory.openSession();
+		List<Object[]> result = session.createNativeQuery("select studentname, classesname, s.class_id from student as s, class_subject as cs, classes c where s.class_id = cs.class_id and s.class_id=c.classesid and cs.teacher_id != 0 order by cs.class_id").list();
+		return result;
+	}
 
 }

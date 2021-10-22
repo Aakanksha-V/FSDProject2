@@ -52,6 +52,12 @@
   	<description></description>
   	<servlet-class>com.controller.ShowSubClassController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ReportController</servlet-name>
+  	<display-name>ReportController</display-name>
+  	<description></description>
+  	<servlet-class>com.controller.ReportController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>AdminController</servlet-name>
   	<url-pattern>/AdminController</url-pattern>
@@ -79,5 +85,9 @@
   <servlet-mapping>
   	<servlet-name>ShowSubClassController</servlet-name>
   	<url-pattern>/ShowSubClassController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ReportController</servlet-name>
+  	<url-pattern>/ReportController</url-pattern>
   </servlet-mapping>
 </web-app>
