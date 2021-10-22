@@ -2,6 +2,8 @@ package com.dao;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -53,6 +55,13 @@ public class Class_SubjectDao {
 		Query<Class_Subject> query = session.createQuery("select s from class_subject s");
 		List<Class_Subject> list = query.list();
 		return list;
+	}
+	
+	public List<Object[]> getSubForClass(){
+		Session session = sessionFactory.openSession();
+		List<Object[]> resList = session.createNativeQuery("select c.classesname , s.subjectname from classes as c, subject as s, class_subject as cs where c.classesid = cs.class_id and s.subjectid = cs.subject_id order by c.classesname asc").list();
+		return resList;
+		
 	}
 
 }

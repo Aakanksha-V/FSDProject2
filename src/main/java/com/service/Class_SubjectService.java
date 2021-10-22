@@ -38,5 +38,9 @@ public class Class_SubjectService {
 	public List<Class_Subject> getAllRecord(){
 		return class_SubjectDao.getAllRecord();
 	}
+	
+	public List<Object[]> getSubForClass(){
+		return class_SubjectDao.getSubForClass();
+	}
 
 }
