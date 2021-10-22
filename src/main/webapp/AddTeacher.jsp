@@ -16,8 +16,6 @@
 		<input type="reset" value="reset"/>
 	</form>
 	<br>
-	<form action="TeacherController" method="get">
-		<input type="submit" value="HOME"/>
-	</form>
+	<a href="Home.jsp">HOME</a>
 </body>
 </html>

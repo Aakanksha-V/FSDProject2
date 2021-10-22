@@ -33,6 +33,6 @@
 		<input type="submit" value="SUBMIT">
 	</form>
 	<br>
-	<a href="Home.jsp">Home</a>
+	<a href="Home.jsp">HOME</a>
 </body>
 </html>

@@ -7,6 +7,7 @@
 <title>Login</title>
 </head>
 <body>
+	<h2>Student Academy</h2>
 	<form action="AdminController" method="post">
 		<label>Email Id: </label>
 		<input type="email" name="email"><br/>

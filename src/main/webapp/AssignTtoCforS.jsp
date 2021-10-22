@@ -46,7 +46,7 @@
 		<br>
 		<input type="submit" value="SUBMIT">
 		<br>
-		<a href="Home.jsp">Back</a>
+		<a href="Home.jsp">HOME</a>
 	</form>
 </body>
 </html>

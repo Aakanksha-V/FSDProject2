@@ -32,6 +32,6 @@
 		}
 		 %>
 	</table>
-	<a href="Home.jsp">Back</a>
+	<a href="Home.jsp">HOME</a>
 </body>
 </html>
