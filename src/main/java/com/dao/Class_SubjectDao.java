@@ -72,7 +72,7 @@ public class Class_SubjectDao {
 	
 	public List<Object[]> getReportStu(){
 		Session session = sessionFactory.openSession();
-		List<Object[]> result = session.createNativeQuery("select studentname, classesname, s.class_id from student as s, class_subject as cs, classes c where s.class_id = cs.class_id and s.class_id=c.classesid and cs.teacher_id != 0 order by cs.class_id").list();
+		List<Object[]> result = session.createNativeQuery("select studentname , classesname from student as s, classes as c where s.class_id =c.classesid").list();
 		return result;
 	}
 

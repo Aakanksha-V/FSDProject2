@@ -11,7 +11,7 @@
 	<form action="ClassesController" method="post">
 		<label>Class ID: </label>
 		<input type="text" name="classId"/><br>
-		<label>Teacher Name: </label>
+		<label>Class Name: </label>
 		<input type="text" name="className"><br/>
 		<input type="submit" value="Store"/>
 		<input type="reset" value="reset"/>

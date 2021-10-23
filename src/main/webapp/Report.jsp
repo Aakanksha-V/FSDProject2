@@ -16,6 +16,7 @@
 			<th>Class Name</th>
 			<th>Teacher Name</th>
 			<th>Subject Name</th>
+			<th>Student List</th>
 		</tr>
 		<%
 		Object obj = request.getAttribute("obj");
@@ -30,6 +31,7 @@
 		%>
 			<tr>
 				<td><%=className %></td>
+				<td><%=teacherName %></td>
 				<td><%=subjectName %></td>
 				<td><ul>
 		<% for(Object[] j : stuList){
