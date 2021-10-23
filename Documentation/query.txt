@@ -1,0 +1,96 @@
+create database academy;
+
+create table subject(subjectid int, subjectname varchar(45), PRIMARY KEY (subjectid));
+create table teacher(tearcherid int, teachername varchar(45), PRIMARY KEY(teacherid));
+create table classes(classesid int, classesname varchar(45), PRIMARY KEY(classesid));
+CREATE TABLE `academy`.`admin` (
+  `email` VARCHAR(45) NOT NULL,
+  `pass` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`email`));
+
+
+SELECT * FROM academy.classes;
+
+insert into academy.classes values(101,"1st std");
+insert into academy.classes values(102,"2nd std");
+insert into academy.classes values(103,"3rd std");
+insert into academy.classes values(104,"4th std");
+insert into academy.classes values(105,"5th std");
+insert into academy.classes values(201,"6th std");
+insert into academy.classes values(202,"7th std");
+insert into academy.classes values(203,"8th std");
+insert into academy.classes values(301,"9th std");
+insert into academy.classes values(302,"10th std");
+insert into academy.classes values(401,"11th std");
+insert into academy.classes values(402,"12th std");
+
+SELECT * FROM academy.subject;
+
+insert into academy.subject values(501,"English");
+insert into academy.subject values(502,"Hindi");
+insert into academy.subject values(503,"Maths");
+insert into academy.subject values(504,"Science");
+insert into academy.subject values(505,"Social Science");
+insert into academy.subject values(506,"Sanskrit");
+insert into academy.subject values(507,"Computer Science");
+insert into academy.subject values(508,"Physics");
+insert into academy.subject values(509,"Chemistry");
+insert into academy.subject values(510,"Biology");
+insert into academy.subject values(511,"History");
+insert into academy.subject values(512,"Geography");
+insert into academy.subject values(513,"Political Science");
+
+SELECT * FROM academy.teacher;
+
+insert into academy.teacher values(20001,"Gaurav");
+insert into academy.teacher values(20003,"Sakshi");
+insert into academy.teacher values(20005,"Aakanksha");
+insert into academy.teacher values(20007,"Priyanka");
+insert into academy.teacher values(20009,"Rishb");
+insert into academy.teacher values(20011,"Vinod");
+insert into academy.teacher values(20015,"Anil");
+
+CREATE TABLE `academy`.`student` (
+  `studentid` INT NOT NULL,
+  `studentname` VARCHAR(45) NULL,
+  `class` INT NULL,
+  PRIMARY KEY (`studentid`),
+  CONSTRAINT `classId`
+    FOREIGN KEY (`class`)
+    REFERENCES `academy`.`classes` (`classesid`)
+    );
+SELECT * FROM academy.student;
+
+insert into academy.student values(26420,"Shivam",402);
+insert into academy.student values(26520,"Aakanksha",101);
+insert into academy.student values(26620,"Priyanka",102);
+insert into academy.student values(26720,"Sonia",103);
+insert into academy.student values(26820,"Nidhi",104);
+insert into academy.student values(26920,"Kanika",105);
+insert into academy.student values(27020,"Naman",201);
+insert into academy.student values(27120,"Zitni",202);
+insert into academy.student values(27220,"Sachin",203);
+insert into academy.student values(27320,"Arjun",301);
+insert into academy.student values(27420,"Anuj",302);
+insert into academy.student values(27520,"Suraj",401);
+insert into academy.student values(27620,"Shahrukh",101);
+
+CREATE TABLE `academy`.`class_subject` (
+  `class_id` INT NOT NULL,
+  `subject_id` INT NOT NULL,
+  PRIMARY KEY (`class_id`, `subject_id`),
+  INDEX `subjectid_idx` (`subject_id` ASC) VISIBLE,
+  CONSTRAINT `classesid`
+    FOREIGN KEY (`class_id`)
+    REFERENCES `academy`.`classes` (`classesid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `subjectid`
+    FOREIGN KEY (`subject_id`)
+    REFERENCES `academy`.`subject` (`subjectid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+alter table class_subject add subject_id int;
+alter table class_subject add foreign key (SubjectID) references subject(subjectid);
+
+insert into class_subject values(103,502,20003);

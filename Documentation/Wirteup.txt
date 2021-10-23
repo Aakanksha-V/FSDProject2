@@ -1,0 +1,35 @@
+Project name : Learner’s Academy
+
+Admin can to do follwing operation:
+    1. Set up a master list of all the subjects for all the classes
+    2. Set up a master list of all the teachers
+    3. Set up a master list of all the classes
+    4. Assign classes for subjects from the master list
+    5. Assign teachers to a class for a subject (A teacher can be assigned to different classes for different subjects)
+    6. Get a master list of students (Each student must be assigned to a single class)
+    7. Class Report
+  
+ SPRINT
+  Product Backlog:
+    1. Set up github account and repositories
+    2. Create Home page
+    3. Add admin login functionality
+    4. Create database with table student, classes, subject, teacher and class_student
+    5. Add service and Dao layer for all the tables with their associated functionality according to the requiremnet
+    6. Create all pages
+    7. Add controllers for all page
+    8. Testing all modules
+    
+    SPRINT 1 (task completed): 1,2,3,4,5
+    SPRINT 2 (task completed): 6,7,8
+    
+JAVA CONCEPTS USED:
+  1. Exception Handling
+  2. Hibernate
+  3. MVC
+  4. Database Handling
+
+
+NOTE:
+Run all the query in qury file
+Git hub link: https://github.com/Aakanksha-V/FSDProject2/tree/master
